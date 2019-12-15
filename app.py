@@ -6,7 +6,7 @@ from utils import hdi
 st.header('First name popularity by birth year, Ontario')
 
 st.markdown("""
-Using open data from the Ontario government[1], we can plot the popularity of first names given to
+Using open data from the Ontario government [1-2], we can plot the popularity of first names given to
 newborns over time. Since a name's popularity grows and fades over generations, we can ask: *given just a first name*, can we estimate the age
 of the person? Often we can, and with high accuracy.
 """)
@@ -64,6 +64,7 @@ st.subheader("References")
 
 st.markdown("""
 1. Government and Consumer Services. (2012). Ontario top baby names (male) May 24, 2019.\nRetrieved from https://www.ontario.ca/data/ontario-top-baby-names-male
+1. Government and Consumer Services. (2012). Ontario top baby names (female) May 24, 2019.\nRetrieved from https://www.ontario.ca/data/ontario-top-baby-names-female
 2. Statistics Canada. Life tables, Canada, provinces and territories, catalogue no. 84-537-X.\nRetrieved from https://www150.statcan.gc.ca/n1/pub/91-209-x/2018001/article/54957-eng.htm
 """)
 
@@ -74,4 +75,4 @@ st.markdown("Cameron Davidson-Pilon, `cam.davidson.pilon@gmail.com`")
 
 
 
-st.text("¹These statistics have been weighed by Canadian survival rates[2]")
+st.text("¹These statistics have been weighed by Canadian population survival rates[2]")
