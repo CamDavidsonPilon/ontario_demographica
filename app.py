@@ -31,11 +31,11 @@ def load_survival():
 total_df = load_nongendered_data()
 survival = load_survival()
 
-name1 = st.sidebar.text_input("Enter first name:", value="Cameron", key="1").upper()
-name2 = st.sidebar.text_input("Enter first name:", value="Barbara", key="2").upper()
+name1 = st.sidebar.text_input("Enter first name:", value="Susan", key="1").upper()
+name2 = st.sidebar.text_input("Enter first name:", value="Jason", key="2").upper()
 name3 = st.sidebar.text_input("Enter first name:", value="Brittany", key="3").upper()
-name4 = st.sidebar.text_input("Enter first name:", value="...", key="4").upper()
-name5 = st.sidebar.text_input("Enter first name:", value="", key="5").upper()
+name4 = st.sidebar.text_input("Enter first name:", value="Karen", key="4").upper()
+name5 = st.sidebar.text_input("Enter first name:", value="Gary", key="5").upper()
 
 
 names = [name for name in [name1, name2, name3, name4, name5] if name in total_df.columns]
