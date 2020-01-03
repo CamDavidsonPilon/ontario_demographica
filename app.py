@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from utils import hdi
-from matplotlib import pyplot as plt
 from string import capwords
 
 st.header('First name popularity by birth year, Ontario')
