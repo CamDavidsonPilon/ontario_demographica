@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from utils import hdi
+from matplotlib import pyplot as plt
+from string import capwords
 
 st.header('First name popularity by birth year, Ontario')
 
@@ -40,7 +42,7 @@ name5 = st.sidebar.text_input("Enter first name:", value="Gary", key="5").upper(
 
 names = [name for name in [name1, name2, name3, name4, name5] if name in total_df.columns]
 
-st.line_chart(total_df[names], width=800, height=700)
+st.line_chart(total_df[names].rename(columns=capwords))
 
 st.subheader("Guessing ages using first names")
 
@@ -50,7 +52,7 @@ confidence intervals of the age of someone, given their first name¹.
 """)
 
 YEAR = 2019
-PERCENT = st.slider("", min_value=20, max_value=95, value=50, step=5, format="%d%%")
+PERCENT = st.slider("", min_value=25, max_value=90, value=50, step=5, format="%d%%")
 for name in names:
     series = total_df[name].copy()
     series.index = pd.RangeIndex(106, 2, -1) # gross TODO.
@@ -63,8 +65,8 @@ for name in names:
 st.subheader("References")
 
 st.markdown("""
-1. Government and Consumer Services. (2012). Ontario top baby names (male) May 24, 2019.\nRetrieved from https://www.ontario.ca/data/ontario-top-baby-names-male
-1. Government and Consumer Services. (2012). Ontario top baby names (female) May 24, 2019.\nRetrieved from https://www.ontario.ca/data/ontario-top-baby-names-female
+1. Government and Consumer Services. (2012). Ontario top baby names (male) May 24, 2019.\nRetrieved from https://data.ontario.ca/dataset/ontario-top-baby-names-male
+1. Government and Consumer Services. (2012). Ontario top baby names (female) May 24, 2019.\nRetrieved from https://data.ontario.ca/dataset/ontario-top-baby-names-female
 2. Statistics Canada. Life tables, Canada, provinces and territories, catalogue no. 84-537-X.\nRetrieved from https://www150.statcan.gc.ca/n1/pub/91-209-x/2018001/article/54957-eng.htm
 """)
 
